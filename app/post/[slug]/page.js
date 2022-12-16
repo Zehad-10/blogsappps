@@ -3,9 +3,7 @@ import { groq } from "next-sanity";
 import { client, urlFor } from "../../../lib/client";
 import Image from "next/image";
 
-export const revalidate = 30;
-
-export async function generateStaticParams() {
+export async function getStaticProps() {
 	const query = groq`*[_type == 'post']{
 		slug
 	}`;
